@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication1.Models.user>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-secondary">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", new { id = item.id })" class="btn btn-primary btn-sm">Edit</a>
+            <a href="@Url.Action("Details", new { id = item.id })" class="btn btn-info btn-sm ms-1">Details</a>
+            <a href="@Url.Action("Delete", new { id = item.id })" class="btn btn-danger btn-sm ms-1">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

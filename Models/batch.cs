@@ -11,7 +11,8 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class batch
     {
         public batch()
@@ -20,7 +21,10 @@ namespace WebApplication1.Models
         }
     
         public int id { get; set; }
+        [Display(Name = "Batch")]
         public string batch1 { get; set; }
+
+        [Display(Name = "Year")] 
         public string year { get; set; }
     
         public virtual ICollection<registration> registrations { get; set; }

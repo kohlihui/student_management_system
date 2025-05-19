@@ -11,7 +11,8 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class course
     {
         public course()
@@ -20,7 +21,11 @@ namespace WebApplication1.Models
         }
     
         public int id { get; set; }
+
+        [Display(Name = "Course")]
         public string course1 { get; set; }
+
+        [Display(Name = "Duration (hours)")]
         public Nullable<int> duration { get; set; }
     
         public virtual ICollection<registration> registrations { get; set; }
